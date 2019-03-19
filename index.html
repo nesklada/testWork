@@ -151,7 +151,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
         (function ($, window, document) {
-            let activeClass = 'is-active';
+            let activeClass = 'is-active',
+                $html = $('html, body');
 
             function toggleMobileMenu() {
                 $('[data-menu]').click(function (e) {
@@ -167,11 +168,13 @@
                         $menuItem.removeClass(activeClass);
                         $('[data-menu="' + $btnControl + '"]').removeClass(activeClass);
                         $('.js_mobile-menu').removeClass(activeClass);
-                        $('html, body').removeClass('mobile-menu_is-active');
+                        setTimeout(function () {
+                            $html.removeClass('mobile-menu_is-active')
+                        }, 350);
                     } else {
                         $this.addClass(activeClass);
                         $('#' + $menuId).addClass(activeClass);
-                        $('html, body').addClass('mobile-menu_is-active')
+                        $html.addClass('mobile-menu_is-active')
                     }
 
                 });
@@ -184,7 +187,7 @@
                     $('[data-menu]').removeClass(activeClass);
                     $('.js_mobile-menu').removeClass(activeClass);
                     setTimeout(function () {
-                        $('body').removeClass('mobile-menu_is-active')
+                        $html.removeClass('mobile-menu_is-active')
                     }, 350);
                 })
             }

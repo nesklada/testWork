@@ -1,34 +1,31 @@
-var gulp = require('gulp'),
-    rename = require('gulp-rename'),
-    cssmin = require('gulp-cssmin'),
+const gulp = require('gulp'),
+    autoprefixer = require('gulp-autoprefixer'),
     sass = require('gulp-sass'),
     watch = require('gulp-watch'),
     webserver = require('gulp-webserver'),
     cssmin = require('gulp-cssmin'),
-    autoprefixer = require('gulp-autoprefixer')
     rename = require('gulp-rename');
 
-var pathCSS = './css/';
-
-var pages = {
-    home: pathCSS + 'site.scss'
+var path = {
+    css: './css/',
+    scss: this.css + 'site.scss'
 }
 
 gulp.task('style', function () {
-    return gulp.src(pages.home)
+    return gulp.src(path.scss)
       .pipe(sass().on('error', sass.logError))
-      .pipe(gulp.dest(pathCSS))
+      .pipe(gulp.dest(path.css))
       .pipe(cssmin())
       .pipe(autoprefixer({
           browsers: ['last 2 versions'],
           cascade: false
       }))
       .pipe(rename({suffix: '.min'}))
-      .pipe(gulp.dest(pathCSS));;
+      .pipe(gulp.dest(path.css));;
   });
 
 gulp.task('watch', function () {
-    gulp.watch(pathCSS + '**/*.scss', ['style']);
+    gulp.watch(path.css + '**/*.scss', ['style']);
 });
 
 gulp.task('webserver', function() {
@@ -39,4 +36,5 @@ gulp.task('webserver', function() {
       }));
   });
 
+gulp.task('build', ['style']);
 gulp.task('default', ['watch','webserver']);
