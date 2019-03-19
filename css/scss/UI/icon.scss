@@ -1,0 +1,86 @@
+.custom_icon-dash {
+    
+    &:before {
+        content: "\2014";
+    }
+}
+
+//png sprite:
+
+.icon-sprite {
+    display: inline-block;
+    background-image: url('../images/sprite-services.png');
+    background-repeat: no-repeat;
+    
+    $sprite-gutter: -10px / 2;
+    
+    $mails-icon-width: 78px / 2;
+    $mails-icon-height: 132px / 2;
+    &-mails {
+        min-width: $mails-icon-width;
+        min-height: $mails-icon-height;
+        width: $mails-icon-width;
+        height: $mails-icon-height;
+        max-width: $mails-icon-width;
+        max-height: $mails-icon-height;
+        background-position: ($sprite-gutter + 2px) ($sprite-gutter + 3px);
+    }
+    
+    $resume-icon-width: 112px / 2;
+    $resume-icon-height: 132px / 2;
+    $resume-icon-position-x: -($mails-icon-width + -($sprite-gutter) + 3px);
+    &-resume {
+        min-width: $resume-icon-width;
+        min-height: $resume-icon-height;
+        width: $resume-icon-width;
+        height: $resume-icon-height;
+        max-width: $resume-icon-width;
+        max-height: $resume-icon-height;
+        background-position: $resume-icon-position-x ($sprite-gutter + 3px);
+    }
+    
+    $interview-icon-width: 119px / 2;
+    $interview-icon-height: 96px / 2;
+    $interview-icon-position-x: -($mails-icon-width + $resume-icon-width + (-($sprite-gutter * 2)) + 3px);
+    &-interview {
+        min-width: $interview-icon-width;
+        min-height: $interview-icon-height;
+        width: $interview-icon-width;
+        height: $interview-icon-height;
+        max-width: $interview-icon-width;
+        max-height: $interview-icon-height;
+        background-position: $interview-icon-position-x ($sprite-gutter + 3px);
+    }
+    
+    $formula-icon-width: 120px / 2;
+    $formula-icon-height: 120px / 2;
+    $interview-icon-position-x: -($mails-icon-width + $resume-icon-width + $interview-icon-width + (-($sprite-gutter * 4)) - 2px);
+    &-formula {
+        min-width: $formula-icon-width;
+        min-height: $formula-icon-height;
+        width: $formula-icon-width;
+        height: $formula-icon-height;
+        max-width: $formula-icon-width;
+        max-height: $formula-icon-height;
+        background-position: $interview-icon-position-x ($sprite-gutter + 3px);
+    }
+    
+    
+    background-size: ($mails-icon-width + $resume-icon-width + $interview-icon-width + $formula-icon-width + (-($sprite-gutter * 4))) auto;
+}
+
+//svg-sprite icons: 
+
+.icon-svg{
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+    
+    svg {
+        height: 100%;
+        width: 100%;
+        background: inherit;
+        fill: inherit;
+        vertical-align: top;
+    }
+} 

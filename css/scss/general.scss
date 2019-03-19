@@ -1,0 +1,31 @@
+body{
+    font-family: $brand-font;
+    font-size: 14px;
+}
+
+
+a:hover{
+    color: none;
+    text-decoration: none;
+}
+
+.wrapper-page {
+    overflow: hidden;
+    
+    @media(min-width: $md){
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    > * {
+        width: 100%;
+    }
+}
+
+.main-page {
+    
+    @media(min-width: $md){
+        flex: 1 0 auto;
+    }
+}

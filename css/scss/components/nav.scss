@@ -1,0 +1,47 @@
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-transform: uppercase;
+    
+    li {
+        margin: 0 15px;
+        
+        &:first-child {
+            margin-left: 0;
+        }
+        
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    
+    &-link {
+        padding: 7px 3px;
+        display: block;
+        color: #343434;
+        fill: #343434;
+        text-decoration: none;
+        font-weight: $font-bold;
+        
+        &:focus {
+            outline: none;
+        }
+        
+        &:hover {
+            color: #ca1b35;
+            fill: #ca1b35;
+        }
+        
+        &:active {
+            color: lighten(#ca1b35, 10%);
+            fill: lighten(#ca1b35, 10%);
+        }
+    }
+    
+    .icon-svg-bag {
+        padding: 0;
+        width: 18px;
+        height: 24px;
+    }
+}

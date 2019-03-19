@@ -1,0 +1,19 @@
+$header-page-height: 66px;
+$header-page-height_md: 66px;
+
+.header-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 12px 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 0 4px 0 rgba(#000, 0.25);
+    z-index: 11;
+    
+    &-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

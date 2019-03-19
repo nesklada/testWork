@@ -1,0 +1,19 @@
+.container {
+    padding: 0 15px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    
+    @media(min-width: $md){
+        max-width: 750px;
+    }
+    
+    @media(min-width: $lg){
+        max-width: 970px;
+    }
+    
+    @media(min-width: $xl){
+        max-width: 1170px;
+    }
+    
+}

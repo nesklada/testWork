@@ -1,0 +1,111 @@
+$mobile-menu-visible: $smaller-then-lg;
+
+@keyframes fade-in{
+    from {
+        opacity: 0;
+    }
+    
+    to {
+        opacity: 1;
+    }
+}
+
+.btn-burger,
+.mobile-menu-close {
+    
+    @media(min-width: $lg) {
+        display: none;
+    }
+    
+    &:focus{ 
+        outline: none;
+    }
+}
+
+.mobile-menu-close {
+    position: absolute;
+    top: 1px;
+    right: 6px;
+    width: 40px;
+    height: 40px;
+    font-size: 26px;
+    border: 0;
+    padding: 0;
+    background: transparent;
+}
+
+.mobile-nav {
+    
+    @media(max-width: $mobile-menu-visible){
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        transform: translateX(100%);
+        padding: 20px;
+        padding-top: 45px;
+        width: calc(100% - 20px);
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        background: #fff;
+        overflow: hidden;
+        overflow-y: auto;
+        visibility: hidden;
+        box-shadow: 0 0 3px 1px rgba(#000, 0.5);
+        transition: 0.35s ease-in-out; 
+        z-index: 11;
+        
+        &:not(.is-active) {
+            //display: none;
+        }
+        
+        &.is-active {
+            visibility: visible;
+            transform: translateX(0);
+        }
+        
+        .nav {
+            display: flex;
+            flex-direction: column;
+            
+            &-item {
+                padding: 5px 0;
+                margin: 0;
+            }
+        }
+    }
+}
+
+html, body {
+    
+    &.mobile-menu_is-active {
+        
+        @media(max-width: $mobile-menu-visible){
+            overflow: hidden;
+        }
+    }
+}
+
+body {
+    
+    &.mobile-menu_is-active{
+        
+       @media(max-width: $mobile-menu-visible){
+            overflow: hidden;
+
+            &:before {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(#000, 0.75);
+                z-index: 10;
+                animation: 0.4s fade-in ease-in-out;
+            }
+        }
+    }
+}

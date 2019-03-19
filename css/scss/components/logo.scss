@@ -1,0 +1,20 @@
+.logo {
+    display: inline-block;
+    text-transform: uppercase;
+    color: #444;
+    font-size: 11px;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    
+    &-bg {
+        margin-bottom: 4px;
+        width: 185px;
+        height: 27px;
+        display: block;
+        background: url(../images/logo.png) no-repeat top left /cover;
+    }
+    
+    :last-child {
+        margin-bottom: 0;
+    }
+}
