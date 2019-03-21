@@ -6,7 +6,7 @@ var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 module.exports = {
     devtool: 'nosources-source-map',
     output: {
-        path: path.resolve(__dirname, '../../'),
+        path: path.resolve(__dirname, '../../dist/'),
         filename: 'js/[name].js'
     },
     plugins: [

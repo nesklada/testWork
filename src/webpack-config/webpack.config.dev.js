@@ -5,12 +5,12 @@ const webpack = require('webpack');
 module.exports = {
     devtool: 'source-map',
     output: {
-        path: path.resolve(__dirname, '../../'),
+        path: path.resolve(__dirname, '../../dist/'),
         filename: 'js/[name].js',
         sourceMapFilename: 'js/[name].map'
     },
     devServer: {
-        contentBase: path.join(__dirname, '../../'),
+        contentBase: path.join(__dirname, '../../dist/'),
         compress: true,
         historyApiFallback: true,
         stats: {

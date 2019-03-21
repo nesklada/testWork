@@ -4,7 +4,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const ENV = process.env.ENV = process.env.NODE_ENV;
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const sourcePath = path.resolve(__dirname, '../src/');
+const sourcePath = path.resolve(__dirname, '../');
 
 module.exports = {
     entry: {
@@ -69,6 +69,11 @@ module.exports = {
             filename: 'css/[name].css'
         }),
         new CopyPlugin([
+            {
+                context: path.resolve(sourcePath, './'),
+                from: '*.html',
+                to: './'
+            },
             {
                 context: path.resolve(sourcePath, './fonts'),
                 from: '**/*',
