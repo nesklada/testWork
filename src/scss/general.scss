@@ -1,8 +1,11 @@
+@import "settings/grid-variable";
+@import "settings/typo-variable";
+
 body{
     font-family: $brand-font;
     font-size: 14px;
-}
 
+}
 
 a:hover{
     color: none;
