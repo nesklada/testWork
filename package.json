@@ -1,17 +1,32 @@
 {
-  "devDependencies": {
-    "gulp": "^4.0.0",
-    "gulp-autoprefixer": "^6.0.0",
-    "gulp-plumber": "^1.2.1",
-    "gulp-connect": "^5.1.0",
-    "gulp-minify-css": "1.2.4",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.6.4",
-    "pump": "3.0.0",
-    "browser-sync": "^2.26.3"
+  "version": "1.0.0",
+  "scripts": {
+    "start:dev": "cross-env NODE_ENV=dev webpack --watch --progress --colors --display-error-details",
+    "build:dev": "cross-env NODE_ENV=dev webpack",
+    "build:prod": "cross-env NODE_ENV=prod webpack",
+    "build:js-dev": "npm install && npm run build:dev",
+    "build:js-prod": "npm install && npm run build:prod"
   },
-  "dependencies": {
-    "bootstrap": "^4.0.0-alpha.6"
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^7.2.4",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.2",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.24.1",
+    "copy-webpack-plugin": "^4.2.0",
+    "cross-env": "^5.1.1",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.5",
+    "html-webpack-plugin": "^2.30.1",
+    "node-sass": "^4.6.0",
+    "optimize-css-assets-webpack-plugin": "^3.2.0",
+    "postcss-loader": "^2.0.10",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.0",
+    "webpack": "^3.8.1",
+    "webpack-merge": "^4.1.1"
   }
 }

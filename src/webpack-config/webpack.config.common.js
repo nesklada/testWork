@@ -4,13 +4,13 @@ const CopyPlugin = require('copy-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const ENV = process.env.ENV = process.env.NODE_ENV;
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const sourcePath = path.resolve(__dirname, '../src/assets/');
+const sourcePath = path.resolve(__dirname, '../src/');
 
 module.exports = {
     entry: {
         'html5shiv': path.join(__dirname, '../js/html5shiv.js'),
         'respond': path.join(__dirname, '../js/respond.js'),
-        'style': path.join(__dirname, '../scss/site.scss')
+        'site': path.join(__dirname, '../scss/site.scss')
     },
     resolve: {
         extensions: ['.scss', '.js', '.html', '.css'],
@@ -34,7 +34,7 @@ module.exports = {
                 test: /\.scss$/,
                 use: ExtractTextPlugin.extract({
                     use: [
-                        'css-loader',
+                        'css-loader?url=false',
                         {
                             loader: 'postcss-loader',
                             options: {
